@@ -37,9 +37,12 @@ header {
     padding-left:15%;
 }
 
-
+/** elmento del menú */
 .menuHEader li {
     float:left;
     padding-bottom:1%;
     padding-right:5%;
 }
+
+
+
