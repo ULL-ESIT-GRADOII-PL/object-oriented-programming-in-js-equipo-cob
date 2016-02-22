@@ -52,13 +52,13 @@ header {
 .contendeorImagenesEnlace {
     /*float:left;*/
     width:100%;
-    /*/*background-color:grey;*/*/
+    /*background-color:grey;*/
 }
 
 /**  Contendor de imagen */
 
 .contendeorImagen {
-    /*/*background-color:blue;*/*/
+    /*background-color:blue;*/
     float:left;
     width:40%;
     margin:2.5%;
@@ -72,7 +72,7 @@ header {
     z-index:1;
     margin:10%;
     margin-bottom:0%;
-    opacity:0.5;
+    opacity:1;
     /* Fallback for web browsers that don't support RGBa */
     background-color: rgb(0, 0, 0);
     /* RGBa with 0.6 opacity */
@@ -84,7 +84,7 @@ header {
 }
 
 .contendeorImagen img:hover {
-        opacity:1;
+        /*opacity:0.4;*/
 
 }
 
@@ -104,8 +104,13 @@ header {
     height:auto;
     letter-spacing:1px;
     font-size:1.2em;
+    opacity:0.1;
 
 }
+
+/*.contendeorImagen .textoImagen:hover {*/
+/*    opacity:1;*/
+/*}*/
 
 .textoImagen p {
         letter-spacing:0.5px;
