@@ -1,5 +1,45 @@
 /** Cabecera de la página */
 
 header {
-    
+    /*background-color:black;*/
+    /*color:white;*/
+    font-family:"Times New Roman","Times","serif";
+}
+
+/** Título de la cabecera */
+
+.titleHeader  {
+    width:29%;
+    /*background-color:blue;*/
+    float:left;
+    font-size:1.7em;
+    padding-left:1%;
+    padding-top:0.5%;
+    cursor:auto;
+    font-style:normal;
+    font-weight:normal;
+    height:auto;
+    letter-spacing:1px;
+    line-height:90%;
+    text-align:left;
+}
+
+/** Menú cabecera */
+
+.menuHEader {
+    width:70%;
+    /*background-color:red;*/
+    float:left;
+}
+
+.menuHEader ul {
+    list-style: none;
+    padding-left:15%;
+}
+
+
+.menuHEader li {
+    float:left;
+    padding-bottom:1%;
+    padding-right:5%;
 }
