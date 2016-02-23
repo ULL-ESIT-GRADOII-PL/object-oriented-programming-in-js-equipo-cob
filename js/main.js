@@ -13,12 +13,19 @@ function isVisible(elemento) {
         return false;
 }
 
-/*  función para mostrar y ocultar tags además de cambiar el subrayado*/
+/**  función para mostrar y ocultar tags además de cambiar el subrayado*/
 function ocultarMostrarTags(focus) {
-    var collection = $("article");
+/** si el focus viene de als imagenes le asignamos el valor correspondiente*/
+        if((focus == "img1") || (focus == "img2")) {
+            if(focus == "img1") {
+                focus = document.getElementById("e2");
+                
+            } else {
+                focus = document.getElementById("e3");
+            }
+        }
         $(focus).addClass("subrayado");
         $(focus).parent().siblings("li").children("a").removeClass("subrayado"); /** acceso mediante familia */
-
         if(focus.id == "e1") {
             $(".contendeorImagenesEnlace").show(500);
             $(".conversorDeTemperatura").hide(500);
@@ -53,6 +60,13 @@ function main() {
 	    $(".menuHEader li a").on( "click", function() {
 	        ocultarMostrarTags(this);
 	    });
+	    $(".imagen1").on( "click", function() {
+	        ocultarMostrarTags("img1");
+	    });
+	    $(".imagen2").on( "click", function() {
+	        ocultarMostrarTags("img2");
+	    });
+	    
      });
 
 
