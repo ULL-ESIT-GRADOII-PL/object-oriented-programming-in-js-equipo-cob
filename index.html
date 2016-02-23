@@ -48,10 +48,29 @@
         </article>
         <article class="conversorDeTemperatura resize3">
             <div>
-                <input type="text" class="InputTemperatura t1"/>
-                <select></select>
-                <input type="text" class="InputTemperatura t2"/>
-                <select></select>
+                <div class="contenedorConversor contenedorIzquierdo">
+                    <input type="text" class="InputTemperatura t1"/>
+                    <div class="selectEstilizado">
+                        <select>
+                            <option selected="1" text="Grado Celsius">Grado Celsius</option>
+                            <option text="Grado Fahrenheit">Grado Fahrenheit</option>
+                            <option text="Kelvin">Kelvin</option>
+                        </select>
+                    </div>    
+                </div>
+                <div class="simboloIgual resize">
+                    =
+                </div>
+                <div class="contenedorConversor contenedorDerecho">
+                    <input type="text" class="InputTemperatura t2"/>
+                    <div class="selectEstilizado">
+                        <select>
+                            <option text="Grado Celsius">Grado Celsius</option>
+                            <option selected="1" text="Grado Fahrenheit">Grado Fahrenheit</option>
+                            <option text="Kelvin">Kelvin</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </article>
         <article class="conversorDeTemperaturaTest">

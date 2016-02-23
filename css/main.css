@@ -143,6 +143,7 @@ header {
 .contendeorImagenesEnlace {
     float:left;
     width:100%;
+    display:none; /** debug */
     /*background-color:grey;*/
 }
 
@@ -204,13 +205,77 @@ header {
 
 /** Conversor de temperatura */
 
-.conversorDeTemperatura, .conversorDeTemperaturaTest {
+.conversorDeTemperatura {
+    /*display:none;*/
+    /*background-color:red;*/
+    float:left;
+    width:70%;
+    margin-left:15%;
+    margin-top:20%;
+}
+
+.contenedorConversor {
+    margin:7.5%;
+    margin-top:5%;
+    margin-bottom:5%;
+    float:left;
+    /*background-color:white;*/
+    width:30%;
+    padding:5%;
+}
+
+
+.contenedorIzquierdo {
+    margin-right:0%; 
+}
+
+
+.contenedorDerecho {
+    margin-left:0%; 
+}
+
+.simboloIgual {
+    text-align:center;
+    float:left;
+    width:5%;
+    margin-top:10%;
+    /*background-color:blue;*/
+}
+.conversorDeTemperaturaTest {
     display:none;
     
 }
 
 
+.selectEstilizado {
+    width: 100%;
+    height:10%;
+    overflow: hidden;
+    background: url(../img/down_arrow_select.jpg) no-repeat right #ddd;
+    border: 2px solid #ccc;
+}
+
+.selectEstilizado:hover {
+    background: url(../img/down_arrow_selected.jpg) no-repeat right white;
+    border: 2px solid white;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+
+.contenedorConversor select {
+   background: transparent;
+   width: 100%;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   -webkit-appearance: none;
+}
 
 
 
-
+.contenedorConversor input {
+    width:100%;
+}
