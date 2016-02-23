@@ -117,6 +117,8 @@ header {
     border-right: solid black 1px;
     text-decoration:none;
 }
+
+/* enlaces del menú */
 .menuHEader li a:link {
     color:black;
     text-decoration:none;
@@ -124,6 +126,14 @@ header {
 }
 .menuHEader li a:visited {
     color:black;
+}
+
+.subrayado {
+    border-bottom:solid black 1px
+}
+
+.noSubrayado {
+    border:none;
 }
 
 /** Contenido */
@@ -168,11 +178,7 @@ header {
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 }
 
-.contendeorImagen img:hover {
-        /*opacity:0.4;*/
-
-}
-
+/** texto detras de la imagen */
 .contendeorImagen .textoImagen {
     z-index:-1;
     width:50%;
@@ -192,18 +198,16 @@ header {
 
 }
 
-/*.contendeorImagen .textoImagen:hover {*/
-/*    opacity:1;*/
-/*}*/
-
 .textoImagen p {
-        letter-spacing:0.5px;
-
+    letter-spacing:0.5px;
 }
 
+/** Conversor de temperatura */
 
-
-
+.conversorDeTemperatura, .conversorDeTemperaturaTest {
+    display:none;
+    
+}
 
 
 

@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css" type="text/css" />
         <link rel="stylesheet" href="./css/main.css" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script type="text/javascript" src="./js/main.js"></script>
         <title>
             
@@ -16,10 +17,13 @@
             <div class="menuHEader">
                 <ul class="resize2">
                     <li>
-                       <a href="#" style="border-bottom:solid black 1px">Inicio</a>
+                       <a href="#" id="e1" class="subrayado">Inicio</a>
                     </li>    
                     <li>
-                       <a href="#">Test</a>
+                       <a id="e2"  href="#">Conversor</a>
+                    </li>     
+                    <li>
+                       <a id="e3"  href="#">Test</a>
                     </li>    
                 </ul>
             </div>    
@@ -37,11 +41,23 @@
                     <img src="./img/probetaManchaPintura.png"/>
                     <div class="textoImagen">
                         <h4>Test del conversor de temperatura</h4>
-                        <p>Test del conversor de temperatura de grados farenheit a celsius y viceversa</p>
+                        <p>Test del conversor de temperatura</p>
                     </div>
                 <div>
             </div>        
         </article>
+        <article class="conversorDeTemperatura resize3">
+            <div>
+                <input type="text" class="InputTemperatura t1"/>
+                <select></select>
+                <input type="text" class="InputTemperatura t2"/>
+                <select></select>
+            </div>
+        </article>
+        <article class="conversorDeTemperaturaTest">
+            texto de prueba dos
+        </article>
+
     </section>
     </body>
 </html>
