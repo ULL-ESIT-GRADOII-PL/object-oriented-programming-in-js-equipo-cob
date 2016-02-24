@@ -44,8 +44,7 @@ function calculate() {
         result[2] = result[2].toFixed(2)+" Kelvin"
       }
     }
-    converted.innerHTML = result[0] +"\n"+ result[1] + result[2];
-    //return result;
+    return result;
   }
 else {
     converted.innerHTML = "ERROR! Try something like '-4.2C' instead";
