@@ -1,3 +1,7 @@
+/** Variables globales */
+var arrayResults = []
+
+
 /** cambiando opacidad de las fotos textos  */
 
 function lastChildOpaciti(nodoLlamador, opacity, opacity2) {
@@ -68,28 +72,39 @@ function main() {
 	    });
 	    
      });
-     addEventInput('t2')
+     addEventInput('InputTemperatura')
 }
 
 
 function addEventInput(input) {
     var input =document.getElementsByClassName(input);
     input[0].addEventListener('keypress', function (e) {
-    var key = e.which || e.keyCode;
-    if (key === 13) { // 13 is enter
-      // code for enter
-      falsoCalculate(5)
+        var key = e.which || e.keyCode;
+        if (key === 13) {   /** 13 es retorno de carro */
+            if (input[0].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
+                arrayResults = falsoCalculate("5c");
+            } 
+        }
+    });
+    
+    input[1].addEventListener('keypress', function (e) {
+        var key = e.which || e.keyCode;
+        if (key === 13) {   /** 13 es retorno de carro */
+            if (input[1].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
+                arrayResults = falsoCalculate("-5.56789      e-6          c");
+            } 
+        }
+    });
 }
+
 function falsoCalculate(temperaturaOriginal) {
-      alert('ejec');
+      console.log(temperaturaOriginal);
+      console.log(temperaturaOriginal.trim());
+      var originalfloat = parseFloat(temperaturaOriginal);
+      console.log(originalfloat)
       var vectorReturn =[];
-      vectorReturn[0] = temperaturaOriginal * 5;
-      vectorReturn[1] = temperaturaOriginal * 3;
+      vectorReturn[0] = (originalfloat * 5).toString() + " f";
+      vectorReturn[1] = (originalfloat * 3).toString() + " k";
       vectorReturn[2] = temperaturaOriginal;
       return vectorReturn;
     }
-});
-
-
-    
-}

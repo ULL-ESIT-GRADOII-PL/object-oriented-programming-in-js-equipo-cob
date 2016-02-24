@@ -47,9 +47,11 @@
             </div>        
         </article>
         <article class="conversorDeTemperatura resize3">
-            <div>
+            <div id="form">
                 <div class="contenedorConversor contenedorIzquierdo">
-                    <input type="text" class="InputTemperatura t1"/>
+                    <form action="">
+                        <input type="text" class="InputTemperatura t1" pattern="[A-Za-z]{3}"/>
+                    </form>
                     <div class="selectEstilizado">
                         <select>
                             <option selected="1" text="Grado Celsius">Grado Celsius</option>
@@ -62,7 +64,9 @@
                     =
                 </div>
                 <div class="contenedorConversor contenedorDerecho">
-                    <input type="text" class="InputTemperatura t2" pattern="[A-Za-z]{3}" />
+                    <form action="">
+                        <input type="text" class="InputTemperatura t2" pattern="[A-Za-z]{3}" />
+                    </form>
                     <div class="selectEstilizado">
                         <select>
                             <option text="Grado Celsius">Grado Celsius</option>
