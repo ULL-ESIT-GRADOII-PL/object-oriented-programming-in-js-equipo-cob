@@ -68,7 +68,28 @@ function main() {
 	    });
 	    
      });
-
-
+     addEventInput('t2')
 }
 
+
+function addEventInput(input) {
+    var input =document.getElementsByClassName(input);
+    input[0].addEventListener('keypress', function (e) {
+    var key = e.which || e.keyCode;
+    if (key === 13) { // 13 is enter
+      // code for enter
+      falsoCalculate(5)
+}
+function falsoCalculate(temperaturaOriginal) {
+      alert('ejec');
+      var vectorReturn =[];
+      vectorReturn[0] = temperaturaOriginal * 5;
+      vectorReturn[1] = temperaturaOriginal * 3;
+      vectorReturn[2] = temperaturaOriginal;
+      return vectorReturn;
+    }
+});
+
+
+    
+}
