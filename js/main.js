@@ -1,5 +1,6 @@
 /** Variables globales */
-var arrayResults = []
+// var arrayResults = []
+"use strict"; /** Use ECMAScript 5 strict mode in browsers that support it */
 
 
 /** cambiando opacidad de las fotos textos  */
@@ -82,29 +83,66 @@ function addEventInput(input) {
         var key = e.which || e.keyCode;
         if (key === 13) {   /** 13 es retorno de carro */
             if (input[0].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
-                arrayResults = falsoCalculate("5c");
+                var arrayResults = falsoCalculate("5c");
+                changeTemperatureConverterInterface(arrayResults);
             } 
         }
     });
-    
+
+    input[0].addEventListener('keyup', function (e) {
+        var key = e.which || e.keyCode;
+        if (input[0].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
+            var value = this.value;
+            value = value.toString();
+            var tTemp = value.charAt(value.length - 1)
+            console.log(tTemp);
+        } 
+    });
+
     input[1].addEventListener('keypress', function (e) {
         var key = e.which || e.keyCode;
         if (key === 13) {   /** 13 es retorno de carro */
             if (input[1].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
-                arrayResults = falsoCalculate("-5.56789      e-6          c");
+                var arrayResults = falsoCalculate("-5.56789      e-6          c");
             } 
         }
     });
 }
 
+    
+function addventSelect(input) {
+    var input =document.getElementsByClassName(input);
+    input[0].addEventListener('keypress', function (e) {
+        var key = e.which || e.keyCode;
+        if (key === 13) {   /** 13 es retorno de carro */
+            if (input[0].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
+                var arrayResults = falsoCalculate("5c");
+                changeTemperatureConverterInterface(arrayResults);
+            } 
+        }
+    });
+}    
+
 function falsoCalculate(temperaturaOriginal) {
       console.log(temperaturaOriginal);
-      console.log(temperaturaOriginal.trim());
+      var originalWithouthBlanks = temperaturaOriginal.replace(/ /g,'');
+      var escalaOriginal = originalWithouthBlanks.charAt(originalWithouthBlanks.length - 1);
       var originalfloat = parseFloat(temperaturaOriginal);
       console.log(originalfloat)
       var vectorReturn =[];
-      vectorReturn[0] = (originalfloat * 5).toString() + " f";
-      vectorReturn[1] = (originalfloat * 3).toString() + " k";
+      vectorReturn[0] = (originalfloat * 5).toString() + "f";
+      vectorReturn[1] = (originalfloat * 3).toString() + "k";
       vectorReturn[2] = temperaturaOriginal;
       return vectorReturn;
     }
+    
+function changeTemperatureConverterInterface(arr) {
+    // var inputRight = document.getElementsByClassName("InputTemperatura")[0];
+    var inputLeft = document.getElementsByClassName("InputTemperatura")[1];
+    // inputRight.value = arr[0];
+    inputLeft.value = arr[1];
+    /*** acabar esto */
+    
+}
+    
+    
