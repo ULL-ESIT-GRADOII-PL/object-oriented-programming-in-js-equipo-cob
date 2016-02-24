@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css" type="text/css" />
         <link rel="stylesheet" href="./css/main.css" type="text/css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script type="text/javascript" src="./js/temperature.js"></script>
         <script type="text/javascript" src="./js/main.js"></script>
         <title>
             
@@ -50,13 +51,13 @@
             <div id="form">
                 <div class="contenedorConversor contenedorIzquierdo">
                     <form action="#">
-                        <input type="text" class="InputTemperatura t1" pattern="[0-9A-Za-z]{2,3}"/>
+                        <input type="text" class="InputTemperatura t1" pattern="^\s*([-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?)\s*([cCfFkK])\s*"/>
                     </form>
                     <div class="selectEstilizado">
-                        <select>
+                        <select class="select">
                             <option selected="1" text="Grado Celsius">Grado Celsius</option>
                             <option text="Grado Fahrenheit">Grado Fahrenheit</option>
-                            <option text="Kelvin">Kelvin</option>
+                            <option text="Grado Kelvin">Grado Kelvin</option>
                         </select>
                     </div>    
                 </div>
@@ -65,13 +66,13 @@
                 </div>
                 <div class="contenedorConversor contenedorDerecho">
                     <form action="#">
-                        <input type="text" class="InputTemperatura t2" pattern="[0-9A-Za-z]{2,3}" />
+                        <input type="text" class="InputTemperatura t2" pattern="^\s*([-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?)\s*([cCfFkK])\s*" />
                     </form>
                     <div class="selectEstilizado">
-                        <select>
+                        <select class="select">
                             <option text="Grado Celsius">Grado Celsius</option>
                             <option selected="1" text="Grado Fahrenheit">Grado Fahrenheit</option>
-                            <option text="Kelvin">Kelvin</option>
+                            <option text="Grado Kelvin">Grado Kelvin</option>
                         </select>
                     </div>
                 </div>

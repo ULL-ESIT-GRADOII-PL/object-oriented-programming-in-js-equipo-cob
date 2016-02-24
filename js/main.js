@@ -1,7 +1,6 @@
 /** Variables globales */
-// var arrayResults = []
+var arrayResults = []
 "use strict"; /** Use ECMAScript 5 strict mode in browsers that support it */
-
 
 /** cambiando opacidad de las fotos textos  */
 
@@ -73,7 +72,8 @@ function main() {
 	    });
 	    
      });
-     addEventInput('InputTemperatura')
+     addEventInput('InputTemperatura');
+     addventSelect('select');
 }
 
 
@@ -83,19 +83,27 @@ function addEventInput(input) {
         var key = e.which || e.keyCode;
         if (key === 13) {   /** 13 es retorno de carro */
             if (input[0].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
-                var arrayResults = falsoCalculate("5c");
-                changeTemperatureConverterInterface(arrayResults);
+                arrayResults = calculate(this); /* global calculate */
+                selectChangeInput(arrayResults, "left");
             } 
         }
     });
 
     input[0].addEventListener('keyup', function (e) {
-        var key = e.which || e.keyCode;
         if (input[0].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
             var value = this.value;
             value = value.toString();
             var tTemp = value.charAt(value.length - 1)
-            console.log(tTemp);
+            inputChangeSelect(tTemp, "left");
+        } 
+    });
+
+    input[1].addEventListener('keyup', function (e) {
+        if (input[1].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
+            var value = this.value;
+            value = value.toString();
+            var tTemp = value.charAt(value.length - 1)
+            inputChangeSelect(tTemp, "right");
         } 
     });
 
@@ -103,46 +111,66 @@ function addEventInput(input) {
         var key = e.which || e.keyCode;
         if (key === 13) {   /** 13 es retorno de carro */
             if (input[1].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
-                var arrayResults = falsoCalculate("-5.56789      e-6          c");
+                arrayResults = calculate(this); 
+                selectChangeInput(arrayResults, "right");
             } 
         }
     });
 }
 
     
-function addventSelect(input) {
-    var input =document.getElementsByClassName(input);
-    input[0].addEventListener('keypress', function (e) {
-        var key = e.which || e.keyCode;
-        if (key === 13) {   /** 13 es retorno de carro */
-            if (input[0].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
-                var arrayResults = falsoCalculate("5c");
-                changeTemperatureConverterInterface(arrayResults);
-            } 
-        }
+function addventSelect(select) {
+    var select = document.getElementsByClassName(select);
+    select[0].addEventListener('change', function () {
+       selectChangeInput(arrayResults,"right");
     });
+    select[1].addEventListener('change', function () {
+       selectChangeInput(arrayResults,"left");
+    });
+    
 }    
 
-function falsoCalculate(temperaturaOriginal) {
-      console.log(temperaturaOriginal);
-      var originalWithouthBlanks = temperaturaOriginal.replace(/ /g,'');
-      var escalaOriginal = originalWithouthBlanks.charAt(originalWithouthBlanks.length - 1);
-      var originalfloat = parseFloat(temperaturaOriginal);
-      console.log(originalfloat)
-      var vectorReturn =[];
-      vectorReturn[0] = (originalfloat * 5).toString() + "f";
-      vectorReturn[1] = (originalfloat * 3).toString() + "k";
-      vectorReturn[2] = temperaturaOriginal;
-      return vectorReturn;
+function inputChangeSelect(char, direction) {
+    var select;
+    if (direction == "left") {
+    select = document.getElementsByClassName("select")[0];
+    } else {
+    select = document.getElementsByClassName("select")[1];
     }
-    
-function changeTemperatureConverterInterface(arr) {
-    // var inputRight = document.getElementsByClassName("InputTemperatura")[0];
-    var inputLeft = document.getElementsByClassName("InputTemperatura")[1];
-    // inputRight.value = arr[0];
-    inputLeft.value = arr[1];
-    /*** acabar esto */
-    
+    switch(char.toLowerCase()) {
+        case 'c' :
+            select.value = "Grado Celsius";
+        break;
+        case 'f' :
+            select.value = "Grado Fahrenheit";
+        break;
+        case 'k' :
+            select.value = "Grado Kelvin";
+        break;
+    }
+}
+
+
+    /** arr = [c ,f, k]  */
+function selectChangeInput(arr, direction) {
+    var char = arr[0].charAt(arr[0].length - 1).toLocaleLowerCase();
+    var selectValue;
+    var input;
+    if(direction == "left") {
+        input = document.getElementsByClassName("InputTemperatura")[1];
+        selectValue = document.getElementsByClassName("select")[1].value;
+    }
+    else if(direction == "right") {
+        input = document.getElementsByClassName("InputTemperatura")[0];
+        selectValue = document.getElementsByClassName("select")[0].value;
+    }
+    if(selectValue == "Grado Celsius") {
+        input.value = arr[0];
+    } else if (selectValue == "Grado Fahrenheit") {
+        input.value = arr[1];
+    } else if (selectValue == "Grado Kelvin") {
+        input.value = arr[2];
+    }
 }
     
     

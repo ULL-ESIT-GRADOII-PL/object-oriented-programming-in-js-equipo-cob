@@ -1,8 +1,9 @@
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
-function calculate() {
+function calculate(original) {
   var result = ["","",""];
   var temp = original.value;
-  var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:\s*e\s?[-+]?\d+)?)\s?º?((?:([Cc])(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?)|(?:([Ff])(?:a(?:h(?:r(?:e(?:n(?:h(?:e(?:i(?:t)?)?)?)?)?)?)?)?)?)|(?:([Kk])(?:e(?:l(?:v(?:i(?:n)?)?)?)?)?))\s*$/;
+  var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?)\s*([cCfFkK])\s*/
+  // var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:\s*e\s?[-+]?\d+)?)\s?º?((?:([Cc])(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?)|(?:([Ff])(?:a(?:h(?:r(?:e(?:n(?:h(?:e(?:i(?:t)?)?)?)?)?)?)?)?)?)|(?:([Kk])(?:e(?:l(?:v(?:i(?:n)?)?)?)?)?))\s*$/;
   var m = temp.match(regexp);
 
   if (m) {
@@ -19,34 +20,34 @@ function calculate() {
     }
     var type = m[2];
     if (m[2] == 'c' || m[2] == 'C') {
-      result[0] = (num * 9/5)+32;
-      result[0] = result[0].toFixed(2)+" Farenheit"
-      result[1] = (num + 273.15) ;
-      result[1] = result[1].toFixed(2)+" Kelvin"
-      result[2] = num ;
-      result[2] = result[2].toFixed(2)+" Celsius"
+      result[0] = num ;
+      result[0] = result[0].toFixed(2)+" C";
+      result[1] = (num * 9/5)+32;
+      result[1] = result[1].toFixed(2)+" F";
+      result[2] = (num + 273.15) ;
+      result[2] = result[2].toFixed(2)+" K";
+ 
     }
     else {
-      if (m[3] == 'f' || m[3] == 'F') {
+      if (m[2] == 'f' || m[2] == 'F') {
         result[0] = (num - 32)*5/9;
-        result[0]= result[0].toFixed(2)+" Celsius"
-        result[1] = ((num - 32)*5/9)+273.15;
-        result[1] = result[1].toFixed(2)+" Kelvin"
-        result[2] = num ;
-        result[2] = result[2].toFixed(2)+" Farenheit"
+        result[0]= result[0].toFixed(2)+" C";
+        
+        result[1] = num;
+        result[1] = result[1].toFixed(2)+" F";
+        
+        result[2] = ((num - 32)*5/9)+273.15;
+        result[2] = result[2].toFixed(2)+" K";
       }
-      else{
+      else {
         result[0] = (num - 273.15);
-        result[0]= result[0].toFixed(2)+" Celsius"
+        result[0]= result[0].toFixed(2)+" C";
         result[1] = ((num - 273.15)/(5/9))+32;
-        result[1] = result[1].toFixed(2)+" Farenheit"
+        result[1] = result[1].toFixed(2)+" F";
         result[2] = num ;
-        result[2] = result[2].toFixed(2)+" Kelvin"
+        result[2] = result[2].toFixed(2)+" K";
       }
     }
     return result;
-  }
-else {
-    converted.innerHTML = "ERROR! Try something like '-4.2C' instead";
   }
 }
