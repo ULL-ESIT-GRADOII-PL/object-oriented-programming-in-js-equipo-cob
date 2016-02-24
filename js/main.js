@@ -47,34 +47,6 @@ function ocultarMostrarTags(focus) {
         }
 }
 
-/** función principal de js */
-
-function main() {
-    var opaco = false;
-    var x = document.getElementsByClassName("contendeorImagen");
-    for(var i = 0; i < x.length; i++) {
-        x[i].addEventListener("mouseenter", function() {
-            lastChildOpaciti(this, '1', '-1');
-        } , false);
-        x[i].addEventListener("mouseleave", function() {
-            lastChildOpaciti(this, '-1', '1');
-        } , false);
-    }
-     $(document).ready(function() {
-	    $(".menuHEader li a").on( "click", function() {
-	        ocultarMostrarTags(this);
-	    });
-	    $(".imagen1").on( "click", function() {
-	        ocultarMostrarTags("img1");
-	    });
-	    $(".imagen2").on( "click", function() {
-	        ocultarMostrarTags("img2");
-	    });
-	    
-     });
-     addEventInput('InputTemperatura');
-     addventSelect('select');
-}
 
 
 function addEventInput(input) {
@@ -172,5 +144,34 @@ function selectChangeInput(arr, direction) {
         input.value = arr[2];
     }
 }
-    
+
+
+/** función principal de js */
+
+function main() {
+    var opaco = false;
+    var x = document.getElementsByClassName("contendeorImagen");
+    for(var i = 0; i < x.length; i++) {
+        x[i].addEventListener("mouseenter", function() {
+            lastChildOpaciti(this, '1', '-1');
+        } , false);
+        x[i].addEventListener("mouseleave", function() {
+            lastChildOpaciti(this, '-1', '1');
+        } , false);
+    }
+     $(document).ready(function() {
+	    $(".menuHEader li a").on( "click", function() {
+	        ocultarMostrarTags(this);
+	    });
+	    $(".imagen1").on( "click", function() {
+	        ocultarMostrarTags("img1");
+	    });
+	    $(".imagen2").on( "click", function() {
+	        ocultarMostrarTags("img2");
+	    });
+	    
+     });
+     addEventInput('InputTemperatura');
+     addventSelect('select');
+}
     

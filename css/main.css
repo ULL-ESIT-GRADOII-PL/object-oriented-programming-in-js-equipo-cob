@@ -144,7 +144,6 @@ header {
 .contendeorImagenesEnlace {
     float:left;
     width:100%;
-    display:none; /** debug */
     /*background-color:grey;*/
 }
 
@@ -208,7 +207,7 @@ header {
 
 /** Contenedor principal */
 .conversorDeTemperatura {
-    /*display:none;*/
+    display:none;
     /*background-color:red;*/
     float:left;
     width:70%;
