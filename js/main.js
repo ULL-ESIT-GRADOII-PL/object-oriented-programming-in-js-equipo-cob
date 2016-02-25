@@ -125,23 +125,25 @@ function inputChangeSelect(char, direction) {
 
     /** arr = [c ,f, k]  */
 function selectChangeInput(arr, direction) {
-    var char = arr[0].charAt(arr[0].length - 1).toLocaleLowerCase();
-    var selectValue;
-    var input;
-    if(direction == "left") {
-        input = document.getElementsByClassName("InputTemperatura")[1];
-        selectValue = document.getElementsByClassName("select")[1].value;
-    }
-    else if(direction == "right") {
-        input = document.getElementsByClassName("InputTemperatura")[0];
-        selectValue = document.getElementsByClassName("select")[0].value;
-    }
-    if(selectValue == "Grado Celsius") {
-        input.value = arr[0];
-    } else if (selectValue == "Grado Fahrenheit") {
-        input.value = arr[1];
-    } else if (selectValue == "Grado Kelvin") {
-        input.value = arr[2];
+    if(arr.length > 1) {
+        var char = arr[0].charAt(arr[0].length - 1).toLocaleLowerCase();
+        var selectValue;
+        var input;
+        if(direction == "left") {
+            input = document.getElementsByClassName("InputTemperatura")[1];
+            selectValue = document.getElementsByClassName("select")[1].value;
+        }
+        else if(direction == "right") {
+            input = document.getElementsByClassName("InputTemperatura")[0];
+            selectValue = document.getElementsByClassName("select")[0].value;
+        }
+        if(selectValue == "Grado Celsius") {
+            input.value = arr[0];
+        } else if (selectValue == "Grado Fahrenheit") {
+            input.value = arr[1];
+        } else if (selectValue == "Grado Kelvin") {
+            input.value = arr[2];
+        }
     }
 }
 
