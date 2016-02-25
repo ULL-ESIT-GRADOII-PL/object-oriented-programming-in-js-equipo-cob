@@ -1,7 +1,6 @@
 var expect = chai.expect
 
 describe('Pruebas del conversor de temperatura', function(){
-expect([ 1, 2, 3]).to.have.lengthOf(3);
 
   it("Array de tamaño 3", function(){
     this.value = "32C"
