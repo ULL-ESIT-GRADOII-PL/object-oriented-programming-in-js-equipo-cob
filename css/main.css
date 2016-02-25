@@ -225,6 +225,15 @@ header {
 
 /** Conversor de temperatura */
 
+/** Contenderor explicación */
+.contenedorExplicacion {
+    font-family:"Times New Roman","Times","serif";
+    /*background-color:red;*/
+    cursor:auto;
+    font-style:normal;
+    font-weight:normal;
+}
+
 /** Contenedor principal */
 .conversorDeTemperatura {
     display:none;
@@ -303,6 +312,7 @@ header {
     padding-bottom:5%;
     border:solid #ccc 2px;
     border-bottom:none;
+    text-align:center;
 }
 
 
@@ -315,7 +325,7 @@ input[pattern]:invalid{
 
 .conversorDeTemperaturaTest {
     display:none;
-  /* Fallback for web browsers that don't support RGBa */
+    /* Fallback for web browsers that don't support RGBa */
     background-color: rgb(0, 0, 0);
     /* RGBa with 0.6 opacity */
     background-color: rgba(0, 0, 0, 0.1);
