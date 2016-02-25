@@ -3,7 +3,7 @@
 * [PL subject page](http://ctc87.github.io/Practicas_PL/)
 * [Repository](https://github.com/ULL-ESIT-GRADOII-PL/conversor-de-temperatura-simple-equipo-cob)
 * [Aplicaction](http://ctc87.github.io/conversor-de-temperatura-simple-equipo-cob/)
-
+![temp](/img/favicon.png)
 
 #Segunda práctica pl. 
 
@@ -22,4 +22,3 @@ de lo contrario será negro. La conversion se produce dínamicamente al escribir
                         * -4 f o 0.09c
                         * -4.5e-7 f o +45e+3k
 
-![temp](/img/favicon.png)
