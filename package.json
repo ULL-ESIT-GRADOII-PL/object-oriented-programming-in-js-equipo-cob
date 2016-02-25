@@ -17,8 +17,7 @@
   ],
   "author": { 
     "name": "Carlos Troyano Carmona"
-    "email": "carlos.troyano.carmona@gmail.es"
-  }
+  },
   
   "contributors": [{
     "name": "Oscar Catari Gutierrez",
@@ -35,8 +34,4 @@
   "dependencies": {
     "normalize.css": "^3.0.3"
   }  
-  "dev-dependencies": {
-    "chai": * ,
-    "mocha": *
-  }
 }
