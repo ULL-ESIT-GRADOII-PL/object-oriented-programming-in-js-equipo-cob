@@ -3,7 +3,8 @@
 * [My página en Github](https://ctc87.github.io/)
 * [Página de la asignatura PL](http://ctc87.github.io/Practicas_PL/)
 * [Repositorio](https://github.com/ULL-ESIT-GRADOII-PL/conversor-de-temperatura-simple-equipo-cob)
-* [Aplicación](http://ctc87.github.io/conversor-de-temperatura-simple-equipo-cob/)
+* [Aplicación-fork](http://ctc87.github.io/conversor-de-temperatura-simple-equipo-cob/)
+* [Fork](https://github.com/ctc87/conversor-de-temperatura-simple-equipo-cob)
 
 #Segunda práctica pl. 
 
