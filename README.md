@@ -21,4 +21,4 @@
                         * -4 f o 0.09c
                         * -4.5e-7 f o +45e+3k
 
-![temp](/images/favicon.png)
+![temp](/img/favicon.png)
