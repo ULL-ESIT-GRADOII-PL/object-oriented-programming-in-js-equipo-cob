@@ -65,7 +65,9 @@ function addEventInput(input) {
         if (input[0].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
             var value = this.value;
             value = value.toString();
-            var tTemp = value.charAt(value.length - 1)
+            var tTemp = value.charAt(value.length - 1);
+            arrayResults = calculate(this); /* global calculate */ 
+            selectChangeInput(arrayResults, "left");
             inputChangeSelect(tTemp, "left");
         } 
     });
@@ -74,8 +76,10 @@ function addEventInput(input) {
         if (input[1].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
             var value = this.value;
             value = value.toString();
-            var tTemp = value.charAt(value.length - 1)
-            inputChangeSelect(tTemp, "right");
+            var tTemp = value.charAt(value.length - 1);
+            arrayResults = calculate(this); /* global calculate */
+            inputChangeSelect(tTemp, "right"); 
+            selectChangeInput(arrayResults, "right");
         } 
     });
 
