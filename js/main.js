@@ -1,6 +1,6 @@
+"use strict"; /** Use ECMAScript 5 strict mode in browsers that support it */
 /** Variables globales */
 var arrayResults = []
-"use strict"; /** Use ECMAScript 5 strict mode in browsers that support it */
 
 /** cambiando opacidad de las fotos textos  */
 
@@ -41,6 +41,7 @@ function ocultarMostrarTags(focus) {
             $(".conversorDeTemperaturaTest").hide(500);
         }
         if(focus.id == "e3") {
+            // window.open("../tests/index.html");
             $(".contendeorImagenesEnlace").hide(500);
             $(".conversorDeTemperatura").hide(500);
             $(".conversorDeTemperaturaTest").show(500);
