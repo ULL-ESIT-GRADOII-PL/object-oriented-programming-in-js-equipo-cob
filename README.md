@@ -1,9 +1,10 @@
+![temp](/img/favicon.png)
 
 * [My github page](https://ctc87.github.io/)
 * [PL subject page](http://ctc87.github.io/Practicas_PL/)
 * [Repository](https://github.com/ULL-ESIT-GRADOII-PL/conversor-de-temperatura-simple-equipo-cob)
 * [Aplicaction](http://ctc87.github.io/conversor-de-temperatura-simple-equipo-cob/)
-![temp](/img/favicon.png)
+
 
 #Segunda práctica pl. 
 
