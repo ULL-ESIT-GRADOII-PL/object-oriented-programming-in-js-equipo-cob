@@ -26,4 +26,5 @@ Ejemplos:
 * 3c   o   3.4 k 
 * -4 f o 0.09c
 * -4.5e-7 f o +45e+3k
-
+* -4 fah o 0.09cel
+* -4 fahrenheit o 0.09 Celsius
