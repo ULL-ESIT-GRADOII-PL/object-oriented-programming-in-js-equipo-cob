@@ -1,6 +1,9 @@
 "use strict"; /** Use ECMAScript 5 strict mode in browsers that support it */
+
+(function(exports) {
 /** Variables globales */
 var arrayResults = []
+
 
 /** cambiando opacidad de las fotos textos  */
 
@@ -155,7 +158,7 @@ function selectChangeInput(arr, direction) {
 
 /** función principal de js */
 
-function main() {
+exports.main = function main() {
     var opaco = false;
     var x = document.getElementsByClassName("contendeorImagen");
     for(var i = 0; i < x.length; i++) {
@@ -181,4 +184,4 @@ function main() {
      addEventInput('InputTemperatura');
      addventSelect('select');
 }
-    
+   })(this)
