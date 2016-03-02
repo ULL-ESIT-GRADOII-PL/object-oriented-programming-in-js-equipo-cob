@@ -1,11 +1,17 @@
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
-function Medida(valor,tipo) {
-  this.valor = valor;
-  this.tipo = tipo;
+function Medida() {
+  this.valor = 0;
+  this.tipo = "c";
 }
 
+function Temperatura() {
+    Medida.call(this);
 
+}
+
+Temperatura.prototype = Object.create(Medida.prototype);
+Temperatura.prototype.constructor = Temperatura;
 
 function calculate(original) {
   var result = ["","",""];
