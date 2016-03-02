@@ -1,4 +1,12 @@
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
+
+function Medida(valor,tipo) {
+  this.valor = valor;
+  this.tipo = tipo;
+}
+
+
+
 function calculate(original) {
   var result = ["","",""];
   var temp = original.value;
@@ -25,16 +33,16 @@ function calculate(original) {
       result[1] = result[1].toFixed(2)+" F";
       result[2] = (num + 273.15) ;
       result[2] = result[2].toFixed(2)+" K";
- 
+
     }
     else {
       if (m[2] == 'f' || m[2] == 'F') {
         result[0] = (num - 32)*5/9;
         result[0]= result[0].toFixed(2)+" C";
-        
+
         result[1] = num;
         result[1] = result[1].toFixed(2)+" F";
-        
+
         result[2] = ((num - 32)*5/9)+273.15;
         result[2] = result[2].toFixed(2)+" K";
       }
