@@ -15,36 +15,7 @@ function Temperatura() {
 Temperatura.prototype = Object.create(Medida.prototype);
 Temperatura.prototype.constructor = Temperatura;
 
-//Clase Celsius con herencia de Temperatura -constructor
-function Celsius() {
-  Temperatura.call(this);
-
-}
-
-Celsius.prototype = Object.create(Temperatura.prototype)
-Celsius.prototype.constructor = Celsius;
-
-//Clase Fahrenheit con herencia de Temperatura -constructor
-function Fahrenheit() {
-  Temperatura.call(this);
-
-}
-
-Fahrenheit.prototype = Object.create(Temperatura.prototype)
-Fahrenheit.prototype.constructor = Fahrenheit;
-
-//Clase Kelvin con herencia de Temperatura -constructor
-function Kelvin() {
-  Temperatura.call(this);
-
-}
-
-Kelvin.prototype = Object.create(Temperatura.prototype)
-Kelvin.prototype.constructor = Kelvin;
-
-
-
-function calculate(original) {
+Temperatura.prototype.calculate = function(original) {
   var result = ["","",""];
   var temp = original.value;
   // var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?)\s*([cCfFkK])\s*/
@@ -95,3 +66,32 @@ function calculate(original) {
     return result;
   }
 }
+
+//Clase Celsius con herencia de Temperatura -constructor
+function Celsius() {
+  Temperatura.call(this);
+
+}
+
+Celsius.prototype = Object.create(Temperatura.prototype)
+Celsius.prototype.constructor = Celsius;
+
+//Clase Fahrenheit con herencia de Temperatura -constructor
+function Fahrenheit() {
+  Temperatura.call(this);
+
+}
+
+Fahrenheit.prototype = Object.create(Temperatura.prototype)
+Fahrenheit.prototype.constructor = Fahrenheit;
+
+//Clase Kelvin con herencia de Temperatura -constructor
+function Kelvin() {
+  Temperatura.call(this);
+
+}
+
+Kelvin.prototype = Object.create(Temperatura.prototype)
+Kelvin.prototype.constructor = Kelvin;
+
+var temperatura = new Temperatura();
