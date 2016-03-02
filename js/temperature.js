@@ -1,10 +1,12 @@
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
+//Clase Medida -constructor
 function Medida() {
   this.valor = 0;
   this.tipo = "c";
 }
 
+//Clase Temperatura con herencia de Medida -constructor
 function Temperatura() {
     Medida.call(this);
 
@@ -12,6 +14,35 @@ function Temperatura() {
 
 Temperatura.prototype = Object.create(Medida.prototype);
 Temperatura.prototype.constructor = Temperatura;
+
+//Clase Celsius con herencia de Temperatura -constructor
+function Celsius() {
+  Temperatura.call(this);
+
+}
+
+Celsius.prototype = Object.create(Temperatura.prototype)
+Celsius.prototype.constructor = Celsius;
+
+//Clase Fahrenheit con herencia de Temperatura -constructor
+function Fahrenheit() {
+  Temperatura.call(this);
+
+}
+
+Fahrenheit.prototype = Object.create(Temperatura.prototype)
+Fahrenheit.prototype.constructor = Fahrenheit;
+
+//Clase Kelvin con herencia de Temperatura -constructor
+function Kelvin() {
+  Temperatura.call(this);
+
+}
+
+Kelvin.prototype = Object.create(Temperatura.prototype)
+Kelvin.prototype.constructor = Kelvin;
+
+
 
 function calculate(original) {
   var result = ["","",""];
