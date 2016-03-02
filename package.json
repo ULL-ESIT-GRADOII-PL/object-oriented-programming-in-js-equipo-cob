@@ -15,27 +15,30 @@
     "html",
     "javascript"
   ],
-  "author": { 
+  "author": {
     "name": "Carlos Troyano Carmona"
   },
-  
-  "contributors": [{
-    "name": "Oscar Catari Gutierrez",
-    "email": "alu0100825893@ull.edu.es"
-  },{
-    "name": "Rubén Labrador Páez",
-    "email": "alu0100309553@ull.edu.es"
-  }],
+  "contributors": [
+    {
+      "name": "Oscar Catari Gutierrez",
+      "email": "alu0100825893@ull.edu.es"
+    },
+    {
+      "name": "Rubén Labrador Páez",
+      "email": "alu0100309553@ull.edu.es"
+    }
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ctc87/conversor-de-temperatura-simple-equipo-cob/issues"
   },
   "homepage": "https://github.com/ctc87/conversor-de-temperatura-simple-equipo-cob#readme",
   "dependencies": {
-    "normalize.css": "^3.0.3"
-  },  
+    "normalize.css": "^3.0.3",
+    "xregexp": "~3.1.0"
+  },
   "devDependencies": {
     "mocha": "*",
     "chai": "*"
-  }  
+  }
 }
