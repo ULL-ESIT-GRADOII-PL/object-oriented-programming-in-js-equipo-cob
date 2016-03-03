@@ -1,5 +1,5 @@
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
-// (function(exports) {
+(function(exports) {
 
 //Clase Medida -constructor
 function Medida() {
@@ -27,19 +27,18 @@ Temperatura.prototype.calculate = function(original) {
   var celsius = new Celsius();
   var fahrenheit = new Fahrenheit();
   var kelvin = new Kelvin();
-  var m = new Array();
   var result = ["","","",""];
+  var m = new Array();
   var temp = original.value;
   var match = XRegExp.exec(temp, this.ca);
-  m[2] = match.units.trim()[0]; //unidadesr
-  m[1] = match.value.trim(); // valor
 
   // m.to.trim(); // si es true hay que enviar algo en la cuarta pos del vector
   // m.units2.trim(); //unidad a convertir con to
   
- 
- 
-  if (m) {
+
+  if (match) {
+    m[2] = match.units.trim()[0]; //unidadesr
+    m[1] = match.value.trim(); // valor
     var regexp2 = /^([-+]?\d+(?:\.\d+)?)(?:e\s?)?([-+]?\d+)?$/
     var numtemp = m[1].match(regexp2);
     numtemp[1] = parseFloat(numtemp[1]);
@@ -65,10 +64,11 @@ Temperatura.prototype.calculate = function(original) {
     }
     if(match.units2) {
       result[3] = match.units2;
-      console.log(result)  
     }
     return result;
     
+  } else {
+    return undefined;
   }
 }
 
@@ -142,11 +142,9 @@ Kelvin.prototype.calculate = function(m,num) {
   result[1] = result[1]+" F";
   result[2] = num ;
   result[2] = result[2]+" K";
-
   return result;
 }
 
 //Variable a usar en el main para comerzar la conversion
-// exports.
-  var temperatura = new Temperatura();
-// })(this)
+exports.temperatura = new Temperatura();
+})(this)
