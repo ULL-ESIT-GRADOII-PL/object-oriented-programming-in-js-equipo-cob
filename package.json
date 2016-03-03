@@ -1,25 +1,41 @@
 {
-  "name": "Conversor",
-  "version": "0.0.1",
-  "description": "Conversor javascript de tipos",
-  "main": "conversor.js",
+  "name": "conversor-de-temperatura-simple-equipo-cob",
+  "version": "1.0.0",
+  "description": "Second exercice of subject Language of processors.",
+  "main": "./js/main.js",
   "scripts": {
-    "test": "mocha test",
-    "chai": "curl https://raw.githubusercontent.com/chaijs/chai/master/chai.js -o test/chai.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aluXXXXXXX/STW03.git"
+    "url": "git+https://github.com/ctc87/conversor-de-temperatura-simple-equipo-cob.git"
   },
   "keywords": [
-    "conversor"
+    "css",
+    "html",
+    "javascript"
   ],
-  "author": "",
+  "author": {
+    "name": "Carlos Troyano Carmona"
+  },
+  "contributors": [
+    {
+      "name": "Oscar Catari Gutierrez",
+      "email": "alu0100825893@ull.edu.es"
+    },
+    {
+      "name": "Rubén Labrador Páez",
+      "email": "alu0100309553@ull.edu.es"
+    }
+  ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aluXXXXXXX/STW03/issues"
+    "url": "https://github.com/ctc87/conversor-de-temperatura-simple-equipo-cob/issues"
   },
-  "homepage": "https://github.com/aluXXXXXXX/STW03",
+  "homepage": "https://github.com/ctc87/conversor-de-temperatura-simple-equipo-cob#readme",
+  "dependencies": {},
   "devDependencies": {
+    "mocha": "*",
+    "chai": "*"
   }
 }
