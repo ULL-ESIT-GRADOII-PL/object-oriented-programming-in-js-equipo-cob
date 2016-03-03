@@ -1,14 +1,22 @@
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
+// (function(exports) {
 
 //Clase Medida -constructor
 function Medida() {
   this.valor = 0;
-  this.tipo = "c";
 }
 
 //Clase Temperatura con herencia de Medida -constructor
 function Temperatura() {
     Medida.call(this);
+    this.ca = XRegExp('(?<value> ^\\s*([-+]?\\d+(?:\.\\d+)?(?:\\s*e\\s?[-+]?\\d+)?)\\s*?º?)\\s* # valor   \n\
+  (?<units>    ((?:([Cc])(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?) |      # celsisu \n\
+  (?:([Ff])(?:a(?:h(?:r(?:e(?:n(?:h(?:e(?:i(?:t)?)?)?)?)?)?)?)?)?) |  # fahrenheit \n\
+  (?:([Kk])(?:e(?:l(?:v(?:i(?:n)?)?)?)?)?))\\s*)                      # kelvin  \n\
+  ((?<to> (?:\\s*to)\\s*)                                             # to \n\
+  (?<units2>    ((?:([Cc])(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?) |      # celsisu \n\
+  (?:([Ff])(?:a(?:h(?:r(?:e(?:n(?:h(?:e(?:i(?:t)?)?)?)?)?)?)?)?)?) |  # fahrenheit \n\
+  (?:([Kk])(?:e(?:l(?:v(?:i(?:n)?)?)?)?)?))))?\\s*$                       # kelvin ', 'x'); 
 }
 
 Temperatura.prototype = Object.create(Medida.prototype);
@@ -19,12 +27,18 @@ Temperatura.prototype.calculate = function(original) {
   var celsius = new Celsius();
   var fahrenheit = new Fahrenheit();
   var kelvin = new Kelvin();
-
-  var result = ["","",""];
+  var m = new Array();
+  var result = ["","","",""];
   var temp = original.value;
-  // var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?)\s*([cCfFkK])\s*/
-  var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:\s*e\s?[-+]?\d+)?)\s*?º?((?:([Cc])(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?)|(?:([Ff])(?:a(?:h(?:r(?:e(?:n(?:h(?:e(?:i(?:t)?)?)?)?)?)?)?)?)?)|(?:([Kk])(?:e(?:l(?:v(?:i(?:n)?)?)?)?)?))\s*$/;
-  var m = temp.match(regexp);
+  var match = XRegExp.exec(temp, this.ca);
+  m[2] = match.units.trim()[0]; //unidadesr
+  m[1] = match.value.trim(); // valor
+
+  // m.to.trim(); // si es true hay que enviar algo en la cuarta pos del vector
+  // m.units2.trim(); //unidad a convertir con to
+  
+ 
+ 
   if (m) {
     var regexp2 = /^([-+]?\d+(?:\.\d+)?)(?:e\s?)?([-+]?\d+)?$/
     var numtemp = m[1].match(regexp2);
@@ -49,7 +63,12 @@ Temperatura.prototype.calculate = function(original) {
         result = kelvin.calculate(m,num);
       }
     }
+    if(match.units2) {
+      result[3] = match.units2;
+      console.log(result)  
+    }
     return result;
+    
   }
 }
 
@@ -128,4 +147,6 @@ Kelvin.prototype.calculate = function(m,num) {
 }
 
 //Variable a usar en el main para comerzar la conversion
-var temperatura = new Temperatura();
+// exports.
+  var temperatura = new Temperatura();
+// })(this)

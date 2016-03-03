@@ -72,7 +72,7 @@ function addEventInput(input) {
             var tTemp = value.charAt(value.length - 1);
             arrayResults = temperatura.calculate(this); /* global calculate */
             selectChangeInput(arrayResults, "left");
-            inputChangeSelect(tTemp, "left");
+            inputChangeSelect(tTemp, "left",  arrayResults[3]);
         }
     });
 
@@ -82,7 +82,7 @@ function addEventInput(input) {
             value = value.toString();
             var tTemp = value.charAt(value.length - 1);
             arrayResults = temperatura.calculate(this); /* global calculate */
-            inputChangeSelect(tTemp, "right");
+            inputChangeSelect(tTemp, "right", arrayResults[3]) ;
             selectChangeInput(arrayResults, "right");
         }
     });
@@ -110,7 +110,14 @@ function addventSelect(select) {
 
 }
 
-function inputChangeSelect(char, direction) {
+function inputChangeSelect(char, direction, cond) {
+    if(cond) {
+        char = cond;
+        if(direction == "right")
+            direction = "left";
+        else
+            direction = "right";
+    }
     var select;
     if (direction == "left") {
     select = document.getElementsByClassName("select")[0];
