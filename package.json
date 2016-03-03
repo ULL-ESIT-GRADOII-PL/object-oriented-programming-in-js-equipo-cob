@@ -33,9 +33,7 @@
     "url": "https://github.com/ctc87/conversor-de-temperatura-simple-equipo-cob/issues"
   },
   "homepage": "https://github.com/ctc87/conversor-de-temperatura-simple-equipo-cob#readme",
-  "dependencies": {
-    "normalize.css": "^3.0.3"
-  },
+  "dependencies": {},
   "devDependencies": {
     "mocha": "*",
     "chai": "*"
