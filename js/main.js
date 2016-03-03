@@ -71,8 +71,8 @@ function addEventInput(input) {
             value = value.toString();
             var tTemp = value.charAt(value.length - 1);
             arrayResults = temperatura.calculate(this); /* global calculate */
-            selectChangeInput(arrayResults, "left");
             inputChangeSelect(tTemp, "left",  arrayResults[3]);
+            selectChangeInput(arrayResults, "left");
         }
     });
 
