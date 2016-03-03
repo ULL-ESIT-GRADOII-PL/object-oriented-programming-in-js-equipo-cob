@@ -26,7 +26,7 @@ function ocultarMostrarTags(focus) {
         if((focus == "img1") || (focus == "img2")) {
             if(focus == "img1") {
                 focus = document.getElementById("e2");
-                
+
             } else {
                 focus = document.getElementById("e3");
             }
@@ -59,9 +59,9 @@ function addEventInput(input) {
         var key = e.which || e.keyCode;
         if (key === 13) {   /** 13 es retorno de carro */
             if (input[0].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
-                arrayResults = calculate(this); /* global calculate */
+                arrayResults = temperatura.calculate(this); /* global calculate */
                 selectChangeInput(arrayResults, "left");
-            } 
+            }
         }
     });
 
@@ -70,10 +70,10 @@ function addEventInput(input) {
             var value = this.value;
             value = value.toString();
             var tTemp = value.charAt(value.length - 1);
-            arrayResults = calculate(this); /* global calculate */ 
+            arrayResults = temperatura.calculate(this); /* global calculate */
             selectChangeInput(arrayResults, "left");
             inputChangeSelect(tTemp, "left");
-        } 
+        }
     });
 
     input[1].addEventListener('keyup', function (e) {
@@ -81,24 +81,24 @@ function addEventInput(input) {
             var value = this.value;
             value = value.toString();
             var tTemp = value.charAt(value.length - 1);
-            arrayResults = calculate(this); /* global calculate */
-            inputChangeSelect(tTemp, "right"); 
+            arrayResults = temperatura.calculate(this); /* global calculate */
+            inputChangeSelect(tTemp, "right");
             selectChangeInput(arrayResults, "right");
-        } 
+        }
     });
 
     input[1].addEventListener('keypress', function (e) {
         var key = e.which || e.keyCode;
         if (key === 13) {   /** 13 es retorno de carro */
             if (input[1].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
-                arrayResults = calculate(this); 
+                arrayResults = temperatura.calculate(this); 
                 selectChangeInput(arrayResults, "right");
-            } 
+            }
         }
     });
 }
 
-    
+
 function addventSelect(select) {
     var select = document.getElementsByClassName(select);
     select[0].addEventListener('change', function () {
@@ -107,8 +107,8 @@ function addventSelect(select) {
     select[1].addEventListener('change', function () {
        selectChangeInput(arrayResults,"left");
     });
-    
-}    
+
+}
 
 function inputChangeSelect(char, direction) {
     var select;
@@ -179,7 +179,7 @@ exports.main = function main() {
 	    $(".imagen2").on( "click", function() {
 	        ocultarMostrarTags("img2");
 	    });
-	    
+
      });
      addEventInput('InputTemperatura');
      addventSelect('select');
