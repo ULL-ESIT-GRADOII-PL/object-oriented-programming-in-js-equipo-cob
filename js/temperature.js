@@ -88,11 +88,11 @@ Celsius.prototype.calculate = function(m,num) {
   var result = ["","",""];
 
   result[0] = num ;
-  result[0] = result[0].toFixed(2)+" C";
+  result[0] = result[0]+" C";
   result[1] = (num * 9/5)+32;
-  result[1] = result[1].toFixed(2)+" F";
+  result[1] = result[1]+" F";
   result[2] = (num + 273.15) ;
-  result[2] = result[2].toFixed(2)+" K";
+  result[2] = result[2]+" K";
   return result;
 }
 
@@ -112,11 +112,11 @@ Fahrenheit.prototype.calculate = function(m,num) {
   var result = ["","",""];
 
   result[0] = (num - 32)*5/9;
-  result[0]= result[0].toFixed(2)+" C";
+  result[0]= result[0]+" C";
   result[1] = num;
-  result[1] = result[1].toFixed(2)+" F";
+  result[1] = result[1]+" F";
   result[2] = ((num - 32)*5/9)+273.15;
-  result[2] = result[2].toFixed(2)+" K";
+  result[2] = result[2]+" K";
 
   return result;
 }
@@ -137,11 +137,11 @@ Kelvin.prototype.calculate = function(m,num) {
   var result = ["","",""];
 
   result[0] = (num - 273.15);
-  result[0]= result[0].toFixed(2)+" C";
+  result[0]= result[0]+" C";
   result[1] = ((num - 273.15)/(5/9))+32;
-  result[1] = result[1].toFixed(2)+" F";
+  result[1] = result[1]+" F";
   result[2] = num ;
-  result[2] = result[2].toFixed(2)+" K";
+  result[2] = result[2]+" K";
 
   return result;
 }
