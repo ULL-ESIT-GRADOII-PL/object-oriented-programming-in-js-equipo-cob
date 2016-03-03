@@ -43,7 +43,6 @@ describe('Pruebas del conversor de temperatura', function(){
 
   it("Se acepta notacion cientifica. -1.2e-3 f",function(){
     this.value = "-1.2e-3 f"
-    console.log(temperatura.calculate(this));
-    expect(temperatura.calculate(this)).to.deep.equal([ "-17.778444444444442 C", "-0.0012 F", "255.37155555555555 K" ]);
+    expect(temperatura.calculate(this)).to.deep.equal([ "-17.778444444444442 C", "-0.0012 F", "255.37155555555555 K" ])
   });
 });
