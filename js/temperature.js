@@ -13,7 +13,7 @@ function Temperatura() {
   (?<units>    ((?:([Cc])(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?) |      # celsisu \n\
   (?:([Ff])(?:a(?:h(?:r(?:e(?:n(?:h(?:e(?:i(?:t)?)?)?)?)?)?)?)?)?) |  # fahrenheit \n\
   (?:([Kk])(?:e(?:l(?:v(?:i(?:n)?)?)?)?)?))\\s*)                      # kelvin  \n\
-  ((?<to> (?:\\s*to)\\s*)                                             # to \n\
+  ((?<to> (?:\\s*to)?\\s*)                                             # to \n\
   (?<units2>    ((?:([Cc])(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?) |      # celsisu \n\
   (?:([Ff])(?:a(?:h(?:r(?:e(?:n(?:h(?:e(?:i(?:t)?)?)?)?)?)?)?)?)?) |  # fahrenheit \n\
   (?:([Kk])(?:e(?:l(?:v(?:i(?:n)?)?)?)?)?))))?\\s*$                       # kelvin ', 'x'); 
@@ -35,7 +35,7 @@ Temperatura.prototype.calculate = function(original) {
   // m.to.trim(); // si es true hay que enviar algo en la cuarta pos del vector
   // m.units2.trim(); //unidad a convertir con to
   
-
+ 
   if (match) {
     m[2] = match.units.trim()[0]; //unidadesr
     m[1] = match.value.trim(); // valor
