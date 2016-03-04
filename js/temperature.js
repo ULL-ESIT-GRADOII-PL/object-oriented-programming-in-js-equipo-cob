@@ -32,10 +32,6 @@ Temperatura.prototype.calculate = function(original) {
   var temp = original.value;
   var match = XRegExp.exec(temp, this.ca);
 
-  // m.to.trim(); // si es true hay que enviar algo en la cuarta pos del vector
-  // m.units2.trim(); //unidad a convertir con to
-  
- 
   if (match) {
     m[2] = match.units.trim()[0]; //unidadesr
     m[1] = match.value.trim(); // valor
