@@ -9,11 +9,11 @@ function Medida() {
 //Clase Temperatura con herencia de Medida -constructor
 function Temperatura() {
     Medida.call(this);
-    this.ca = XRegExp('(?<value> ^\\s*([-+]?\\d+(?:\.\\d+)?(?:\\s*e\\s?[-+]?\\d+)?)\\s*?º?)\\s* # valor   \n\
+    this.ca = XRegExp('(?<value> ^\\s*([-+]?\\d+(?:\\.\\d+)?(?:\\s*e\\s?[-+]?\\d+)?)\\s*?º?)\\s* # valor   \n\
   (?<units>    ((?:([Cc])(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?) |      # celsisu \n\
   (?:([Ff])(?:a(?:h(?:r(?:e(?:n(?:h(?:e(?:i(?:t)?)?)?)?)?)?)?)?)?) |  # fahrenheit \n\
   (?:([Kk])(?:e(?:l(?:v(?:i(?:n)?)?)?)?)?))\\s*)                      # kelvin  \n\
-  ((?<to> (?:\\s*to)\\s*)                                             # to \n\
+  ((?<to> (?:\\s*to)?\\s*)                                             # to \n\
   (?<units2>    ((?:([Cc])(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?) |      # celsisu \n\
   (?:([Ff])(?:a(?:h(?:r(?:e(?:n(?:h(?:e(?:i(?:t)?)?)?)?)?)?)?)?)?) |  # fahrenheit \n\
   (?:([Kk])(?:e(?:l(?:v(?:i(?:n)?)?)?)?)?))))?\\s*$                       # kelvin ', 'x'); 
@@ -31,10 +31,6 @@ Temperatura.prototype.calculate = function(original) {
   var m = new Array();
   var temp = original.value;
   var match = XRegExp.exec(temp, this.ca);
-
-  // m.to.trim(); // si es true hay que enviar algo en la cuarta pos del vector
-  // m.units2.trim(); //unidad a convertir con to
-  
 
   if (match) {
     m[2] = match.units.trim()[0]; //unidadesr
